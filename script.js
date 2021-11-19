@@ -2,11 +2,11 @@ function cleanUpIndex() {
     elements = document.querySelectorAll('.contact')
 
     for (let i = 0; i < elements.length; i++) {
-        elements[i].remove()
+        elements[i].remove();
     }
-}
+};
 
-function createSingleIndex(fullName) {
+function createSingleIndex(contact) {
 
     let main = document.querySelectorAll('.main');
 
@@ -14,15 +14,15 @@ function createSingleIndex(fullName) {
     let createDiv = document.createElement('div');
     let createP = document.createElement('p')
 
-    createP.append(fullName);
+    createP.append(contact.name);
     createDiv.appendChild(createP);
     createDiv.classList.add("contact");
 
     createA.appendChild(createDiv);
     createA.href = "page3.html";
 
-main[0].appendChild(createA);
-}
+    main[0].appendChild(createA);
+};
 
 let contactList = [
     {
@@ -37,9 +37,7 @@ let contactList = [
       address: "Warner Brothers Animation Lot",
       email: "whatsup@doc.example.com",
     },
-]
-
-
+];
 
 function renderIndex(contact) {
 
@@ -59,5 +57,13 @@ function renderIndex(contact) {
 
         main[0].appendChild(createA);
     }
-}
+};
 
+
+
+function cleanUpView() {
+    let contactinfo = document.querySelectorAll('.contactinfo')
+    for (let i = 0; i < contactinfo.length; i++) {
+        contactinfo[i].remove();
+    }
+}
